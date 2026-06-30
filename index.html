@@ -254,6 +254,15 @@
   }
   .price-row .value.lowest { color: var(--green); }
 
+  .steam-link {
+    display: block;
+    font-size: 10.5px;
+    color: var(--cosmic);
+    text-decoration: none;
+    margin-top: 4px;
+  }
+  .steam-link:hover { text-decoration: underline; }
+
   .checked-at { font-size: 10px; color: #5b5774; margin-top: 10px; text-align: right; position: relative; }
 
   .fav-row { display: flex; justify-content: flex-end; margin-top: 8px; position: relative; }
@@ -430,6 +439,7 @@
           <div>
             <div class="name">${escapeHtml(data.name)}</div>
             ${data.rarity ? `<span class="rarity-tag" style="background:rgba(255,255,255,0.08); color:var(${rarityColorVar(data.rarity)})">${escapeHtml(data.rarity)}</span>` : ''}
+            <a href="https://steamcommunity.com/market/listings/3678970/${encodeURIComponent(data.hash_name)}" target="_blank" rel="noopener" class="steam-link">Ver na Steam ↗</a>
           </div>
         </div>
         <div class="price-row"><span>Menor preço</span><span class="value lowest">${data.lowest_price || '—'}</span></div>
